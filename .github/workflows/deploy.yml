@@ -22,3 +22,4 @@ jobs:
               cd /usr/share/nginx/test
               ls -al
               git pull origin main
+              systemctl reload nginx
