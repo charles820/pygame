@@ -1,4 +1,4 @@
-name: Deploy HTML to CVM
+name: Deploy PyGamge to VM
 
 on:
   push:
@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-              whoami
+              cd /usr/share/nginx/
               ls -al
