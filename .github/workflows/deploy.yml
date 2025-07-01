@@ -1,0 +1,60 @@
+name: Deploy HTML to CVM
+
+on:
+  push:
+    branches: [ "main" ]  # 触发分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 49.7.36.14
+          port: 62387
+          username: root
+          key: -----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAxRamcYybeCAyD/smNAui5Jt7aVXGvAJsBMpnhGuxAdMx9PnH+p7e
+L8EisY9VIFXK96rwsSc2l5g+GapcCKf2Iq7IpawJb8HsQ+YghEoFeJ+oEKaSxS+R1+6pg3
+f6Hib7fAXsDgzGWPEpXi1kn180qBhc0jUykCQXYdd9fjsGbbeEE+dMZtN3kf/xT9VBxQOq
+ZxM/fQ2gNCsgUztrSPdsAfcvVvhA/KNmptNYgb+B3tY0msG2NlKFmwEe0XyGCnb+YmFeaZ
+I1TTc/q8hmARawgBfSmzgRVktStpA6jjjZhXBeJZRuNMme2xElg07lIut7MP6vI5uqP8pi
+Ry3OxyN4i7mJTDZDByIKopMIwEZi6JzWkkWexZMFwhioL2v1SLdbkV/99AX+psh0/GzsLz
+eQRkxzbkLOLIFN7Hl9fcFDtcQxqFcbCkzpIWnudVOHLU49N6y2MsR23C7oNOa4fvOgYJCg
+ppKCsP8LI0G3lGvP08tBVezrSWSSoO1G8gWLzffdAAAFkNd0Bs/XdAbPAAAAB3NzaC1yc2
+EAAAGBAMUWpnGMm3ggMg/7JjQLouSbe2lVxrwCbATKZ4RrsQHTMfT5x/qe3i/BIrGPVSBV
+yveq8LEnNpeYPhmqXAin9iKuyKWsCW/B7EPmIIRKBXifqBCmksUvkdfuqYN3+h4m+3wF7A
+4MxljxKV4tZJ9fNKgYXNI1MpAkF2HXfX47Bm23hBPnTGbTd5H/8U/VQcUDqmcTP30NoDQr
+IFM7a0j3bAH3L1b4QPyjZqbTWIG/gd7WNJrBtjZShZsBHtF8hgp2/mJhXmmSNU03P6vIZg
+EWsIAX0ps4EVZLUraQOo442YVwXiWUbjTJntsRJYNO5SLrezD+ryObqj/KYkctzscjeIu5
+iUw2QwciCqKTCMBGYuic1pJFnsWTBcIYqC9r9Ui3W5Ff/fQF/qbIdPxs7C83kEZMc25Czi
+yBTex5fX3BQ7XEMahXGwpM6SFp7nVThy1OPTestjLEdtwu6DTmuH7zoGCQoKaSgrD/CyNB
+t5Rrz9PLQVXs60lkkqDtRvIFi8333QAAAAMBAAEAAAGALIOLIEZTrvQGmpls7YBbUCrV2t
+qmwjwBzasxajUwi2r584ye4DoVkM+cWGI5Jc56wyl2p2xl5iNak01o8AOPkhHL+685imZQ
+SJ2nZnmZdr8IpIoayDKQTCb5XlowwbKoRkDIKfw0qE3/u+egvGYybGzkOg4N14RvS4fyLh
+qCvzEdwakSFn9YmD8ob5GJA0hqqlEsm8ACGQZMjL/04UwQtvjvVkNH2kfFnZRKfzOTz5Kt
+2u45i1dkGbhND5+CXsa1FGfp4vDQqopkBlx7oFoesS106JmDigWWzpZoC39VSqYd9rFxqH
+3jp+SV1r3OTcqWDQxupmf7dBSUcf9obIOb3h+mMbAPwKe/ed0A+HuC0Nr9w0HMZovZFvAw
+Ue2c0PLrlPofdiDi98ycwFqBzHSD23HuilE57DivKGxzl3S1nUM7I6PEGZwPfsq6atZ9Ug
+/2H2slaC+TLXeDyKQdO+qXvFmE0rznc/YWr5QP/gNlRtNCRihXv1MPrggp5pCvysz5AAAA
+wQCxt3D5f775IQCi1BfB9eJBFdfmk/wRC5hUBgsNByfjNd+3TynxpwOcm4qXopYEbMw792
+4YKPbZpkpYA9Uk5M+k8YEANVgsw3f+0+skdn1pCV2GV3ZpG0ijpRXUbCCTY/3Hh94GLdAs
+OvI7Wz+EaR6AW+h8xeHF2de4QPZd838liMxFL2J+QmM3H0UhzKi3tsC4UU04bse9gJiTxH
+uxZ5PsQxnjsxRarYDfzylYhAHFiW+y3jQ9LllmqfB8O2P50T4AAADBAOEceBH4P/qM43ke
+flNfFkoEqQYHTUHuGaANeeq/vIJLKulxM6lRFJfxfMMQk+xnIyYzaeZcMS2bjleGKOlY3k
+bj3zSh/wIJ+MMtPCCOyB2G9Pv2qxP6tPMjIiuhFIOaLhRfii9O0wCofQF7iYiTqocqg38i
+m93ejL33e0N2vqJnxxkNa0fBrs5y6eEuzuvRTyEveXeDcBulFJPApx2InQiedpMdqjnYH3
+FVpJ7ytacxdEqceCLa7G/GbyfZ10h/NwAAAMEA4CHSDscJJ3HC4eMvpVD0vsWKiY+b7b4G
+nkFU/xP1cRUSFXEVo3MShAKbuOHFaE+hsL+D3fnzGmos0n+ELVkAsbtnubt3PDRT16QmiD
+APFAn4uTecEk3ZkDm2it4HJ7MmgL4Z5kL/o4DYc75lrZ8476Gb4FNIG75VYVyd4koEXfTz
+ar7HJ00wYczU9LPrVeiSFuHhLvmTGZhvxARhJPU0r+LsrKjvR6InQ72GAO7S8yM+BmROWk
+UtqWxwY0pGxsOLAAAAFnJvb3RAbnZtLTE3ZmZwa3BraDVwdDABAgME
+-----END OPENSSH PRIVATE KEY-----
+          script: |
+              whoami
+              ls -al
