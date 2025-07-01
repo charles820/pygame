@@ -19,5 +19,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-              cd /usr/share/nginx/
+              cd /usr/share/nginx/test
               ls -al
+              git pull origin main
