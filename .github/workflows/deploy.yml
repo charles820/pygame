@@ -17,7 +17,7 @@ jobs:
           host: 49.7.36.14
           port: 62387
           username: root
-          key: -----BEGIN OPENSSH PRIVATE KEY-----
+          key: "-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAxRamcYybeCAyD/smNAui5Jt7aVXGvAJsBMpnhGuxAdMx9PnH+p7e
 L8EisY9VIFXK96rwsSc2l5g+GapcCKf2Iq7IpawJb8HsQ+YghEoFeJ+oEKaSxS+R1+6pg3
@@ -54,7 +54,7 @@ nkFU/xP1cRUSFXEVo3MShAKbuOHFaE+hsL+D3fnzGmos0n+ELVkAsbtnubt3PDRT16QmiD
 APFAn4uTecEk3ZkDm2it4HJ7MmgL4Z5kL/o4DYc75lrZ8476Gb4FNIG75VYVyd4koEXfTz
 ar7HJ00wYczU9LPrVeiSFuHhLvmTGZhvxARhJPU0r+LsrKjvR6InQ72GAO7S8yM+BmROWk
 UtqWxwY0pGxsOLAAAAFnJvb3RAbnZtLTE3ZmZwa3BraDVwdDABAgME
------END OPENSSH PRIVATE KEY-----
+-----END OPENSSH PRIVATE KEY-----"
           script: |
               whoami
               ls -al
